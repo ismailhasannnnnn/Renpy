@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 124: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    if gender == 1:
-    ^
+File "game/script.rpy", line 57: choice menuitem expects a non-empty block.
+    "Female":
+             ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
