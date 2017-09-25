@@ -1,13 +1,37 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+Mon Sep 25 16:26:41 2017
+=======
+<<<<<<< HEAD
+>>>>>>> Working
 Mon Sep 25 16:03:05 2017
 =======
 Mon Sep 25 16:04:19 2017
 >>>>>>> 88e80cc76b194f69dfef11229bd10ab67bee5e21
+<<<<<<< HEAD
+=======
+>>>>>>> master
+>>>>>>> Working
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
  
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+Bootstrap to the start of init.init took 0.08s
+Early init took 0.02s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.08s
+Loading persistent took 0.01s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.08s
+Loading analysis data took 0.02s
+=======
+<<<<<<< HEAD
+>>>>>>> Working
 Bootstrap to the start of init.init took 0.07s
 Early init took 0.02s
 Loader init took 0.02s
@@ -24,21 +48,38 @@ Loading persistent took 0.01s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.12s
 Loading analysis data took 0.01s
+>>>>>>> master
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
+<<<<<<< HEAD
 DPI scale factor: 1.500000
 Creating interface object took 0.05s
+=======
+<<<<<<< HEAD
+DPI scale factor: 1.000000
+Creating interface object took 0.07s
+=======
+DPI scale factor: 1.500000
+Creating interface object took 0.05s
+>>>>>>> master
+>>>>>>> Working
 Cleaning stores took 0.00s
-Init translation took 0.03s
+Init translation took 0.04s
 Build styles took 0.00s
-Load screen analysis took 0.02s
+Load screen analysis took 0.03s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
 Prepare screens took 0.04s
 Save pyanalysis. took 0.00s
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+Save bytecode. took 0.00s
+=======
+>>>>>>> Working
 Save bytecode. took 0.03s
 Running _start took 0.00s
 Performance test:
@@ -448,3 +489,7 @@ Total time until interface ready: 1.77600002289s
 - Frame drawn at 0.102000 seconds.
 - 0.102000 seconds to render 5 frames.
 >>>>>>> 88e80cc76b194f69dfef11229bd10ab67bee5e21
+<<<<<<< HEAD
+=======
+>>>>>>> master
+>>>>>>> Working
