@@ -1,10 +1,10 @@
-Mon Sep 25 14:33:12 2017
+Mon Sep 25 16:04:19 2017
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
  
 
-Bootstrap to the start of init.init took 0.07s
-Early init took 0.02s
+Bootstrap to the start of init.init took 0.06s
+Early init took 0.01s
 Loader init took 0.01s
 Loading error handling took 0.02s
 Loading script took 0.06s
@@ -20,7 +20,7 @@ Making clean stores took 0.00s
 DPI scale factor: 1.000000
 Creating interface object took 0.06s
 Cleaning stores took 0.00s
-Init translation took 0.04s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.02s
 Analyze screens took 0.00s
@@ -412,31 +412,11 @@ Texture testing:
 - 1024px textures work.
 - 2048px textures work.
 controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
-Total time until interface ready: 2.87600016594s
+Total time until interface ready: 1.77600002289s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.159000 seconds.
-- Frame drawn at 0.163000 seconds.
-- Frame drawn at 0.168000 seconds.
-- Frame drawn at 0.185000 seconds.
-- 0.185000 seconds to render 5 frames.
-Cleaning stores took 0.00s
-Init translation took 0.11s
-Build styles took 0.01s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.11s
-Build styles took 0.01s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1920, 1080)
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)
+- Frame drawn at 0.078000 seconds.
+- Frame drawn at 0.081000 seconds.
+- Frame drawn at 0.085000 seconds.
+- Frame drawn at 0.102000 seconds.
+- 0.102000 seconds to render 5 frames.
