@@ -249,6 +249,8 @@ label fm1:
 
 
 label femalechapter1toschool:
+    show road
+    with fade
     "As you sprint towards your school, you run into a familiar face. %(bestfriendname)s, who you've known since you were born."
     if bestfriendgender == 1:
         "Just like always, he starts running along with you, to get to school as fast as possible."

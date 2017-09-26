@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 241: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "I'm seriously gonna be so late for school. Thanks for the food mom. Bye!"
-                                                                              ^
+File "game/script.rpy", line 254: expected statement.
+    "As you sprint towards your school, you run into a familiar face. %(bestfriendname)s, who you've known since you were born."/8/
+                                                                                                                                   ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
