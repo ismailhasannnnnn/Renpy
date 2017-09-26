@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 254: expected statement.
-    "As you sprint towards your school, you run into a familiar face. %(bestfriendname)s, who you've known since you were born."/8/
-                                                                                                                                   ^
+File "game/script.rpy", line 159: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+            $ bestfriendname = "Justin
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

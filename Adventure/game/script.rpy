@@ -4,6 +4,8 @@ image bg black = "black.jpg"
 image bg malebedroom = "malebedroom.jpg"
 image bg femalebedroom = "femalebedroom.jpg"
 image bg kitchen = "kitchen.jpg"
+image bg road = "road.jpg"
+image bg school = "school.jpg"
 image mom = "sasha.png"
 
 
@@ -15,6 +17,10 @@ define bf = Character("bestfriendname")
 define unknown = Character("???", color='#FFFFFF')
 define mom = Character("Mom", color='#FFFFFF')
 define dad = Character("Dad", color='#FFFFFF')
+
+
+
+
 define movemom = MoveTransition(3.0)
 define flash = Fade(1.0, 0, 3.0, color='#FFFFFF')
 
@@ -149,6 +155,8 @@ label femaleintro2:
         "Interesting, they're female."
     $ bestfriendname = renpy.input("And their name?")
     $ bestfriendname = bestfriendname.strip()
+    if bestfriendname == "":
+        $ bestfriendname = "Justin"
     if bestfriendgender == 1:
         "So they're male, and their name is %(bestfriendname)s?"
         menu:
@@ -249,7 +257,7 @@ label fm1:
 
 
 label femalechapter1toschool:
-    show road
+    scene bg road
     with fade
     "As you sprint towards your school, you run into a familiar face. %(bestfriendname)s, who you've known since you were born."
     if bestfriendgender == 1:
@@ -266,6 +274,9 @@ label femalechapter1toschool:
     playername"Yeah, my dad was just telling me about it before I left."
     bestfriendname"Seems like a bunch of bullshit, don't you think?"
     playername"After what my dad said, yep. No way they're gonna nuke us."
+    scene bg school at truecenter with fade:
+        linear 5 zoom 1.3
+    
     "As you both approach the school, there is a familiar feeling of sadness and hatred that grows stronger with every step you take."
     "Fortunately, you were late, which means you won't have to be in the school for as long."
     
