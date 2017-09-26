@@ -3,6 +3,7 @@ image bg introbg = "introbg.jpg"
 image bg black = "black.jpg"
 image bg malebedroom = "malebedroom.jpg"
 image bg femalebedroom = "femalebedroom.jpg"
+image bg kitchen = "kitchen.jpg"
 image mom = "sasha.png"
 
 
@@ -14,6 +15,8 @@ define bf = Character("bestfriendname")
 define unknown = Character("???", color='#FFFFFF')
 define mom = Character("Mom", color='#FFFFFF')
 define dad = Character("Dad", color='#FFFFFF')
+define movemom = MoveTransition(3.0)
+define flash = Fade(1.0, 0, 3.0, color='#FFFFFF')
 
 
 
@@ -164,27 +167,7 @@ label femaleintro2:
             "No":
                 jump femaleintro2
                 
-<<<<<<< HEAD
 label maleprologue:
-    
-    "Listen, %(playername)s, it's getting dark. We should probably get going."
-    scene bg black
-    with fade
-    "From then on, nobody knew how incredibly gifted %(playername)s was."
-    if gender == 1:
-        "Little did he know, a great threat would soon overwhelm America, and his life would be changed forever."
-    if gender == 2:
-        "Little did she know, a great threat would soon overwhelm America, and her life would be changed forever."
-    stop music fadeout 1.0
-    jump malechapter1
-    
-label femaleprologue:
-=======
-<<<<<<< Updated upstream
-label prologue:
-=======
-label maleprologue:
->>>>>>> Testing
     
     "Listen, %(playername)s, it's getting dark. We should probably get going."
     scene bg black
@@ -195,7 +178,6 @@ label maleprologue:
     jump malechapter1
     
 label femaleprologue:
->>>>>>> Stashed changes
     
     "Listen, %(playername)s, it's getting dark. We should probably get going."
     scene bg black
@@ -219,24 +201,72 @@ label femalechapter1:
     "..."
     unknown"These violent delights have violent ends, %(playername)s."
     "...!"
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-    if gender == 1:
-        scene bg malebedroom
-        with fade
-    if gender == 2:
-        scene bg femalebedroom
-        with fade
-=======
     scene bg femalebedroom
     with dissolve
     playername"(What the hell was that?)"
-    show mom
-    with moveinright(3.0)
+    show mom at right
+    with dissolve
+    mom"You're gonna be late for school!"
+    mom"Come downstairs and eat breakfast now!"
+    scene bg kitchen
+    with fade
+    dad"Well, look who finally decided to wake up!"
+    dad"I'm just messin, %(playername)s, you just took a while to wake up."
+    mom"Anyhow, you're gonna be late to school, so eat your breakfast fast!"
+    menu:
+        "Eat breakfast with your parents. Risk being late.":
+            jump femalechapter1breakfast
+        
+        "Skip breakfast and leave for school.":
+            playername"Sorry guys, I don't have any time to eat. I'm already way late for school."
+            dad"That's exactly the reason why you're going to stay and eat breakfast with us. A few more minutes won't kill you. You're already late, anyway."
+            jump femalechapter1nobreakfast
+        
+label femalechapter1breakfast:
+
+    "As you sit down to eat, you hear the TV new anchor blabber about rising tensions between the Sovereignity and the U.S."
+    dad"Hey, %(playername)s, look at the crap they're feeding us on the news. They're saying that North Korea's gonna nuke us!"
+    dad"No way they'd ever do it. Seriously. They know that if they did, we'd completely obliterate them."
+    dad"Besides, haven't they ever heard of Mutually Assured Destruction?"
     
->>>>>>> Stashed changes
->>>>>>> Testing
+label fm1:
+    
+    menu:
+        "They said something about Sovereignity. What's that?":
+            dad"C'mon kiddo, what're they teaching you in history? It's the North Korean-Russian alliance."
+            dad"I should start looking for other schools maybe."
+            jump fm1
+            
+        "What's Mutually Assured Destruction?":
+            mom"Wow, they really aren't teaching anything in that school of yours! Should I have a parent-teacher conference?"
+            dad"Let's just say that North Korea won't get a second chance to nuke us. You know, cause they're gonna be dead."
+            jump fm1
+            
+        "I'm seriously gonna be so late for school. Thanks for the food mom. Bye!":
+            mom"Have fun at school, sweetie!"
+            dad"Tell your teachers to explain more things to you! If they don't then I definitely will!"
+            jump femalechapter1nobreakfast
+
+
+label femalechapter1nobreakfast:
+    "As you sprint towards your school, you run into a familiar face. %(bestfriendname)s, who you've known since you were born."
+    if bestfriendgender == 1:
+        "Just like always, he starts running along with you, to get to school as fast as possible."
+    if bestfriendgender == 2:
+        "Just like always, she starts running along with you, to get to school as fast as possible."
+        
+    bestfriendname"Yo, we're hanging out at MoonBucks after school today right? I've really been wanting to try their Blueberry Sour Latte."
+    playername"Yeah, of course we are. We planned this out over the last few days remember? It was hard for me to convince my parents to let me go though."
+    bestfriendname"They don't even know, do they?"
+    playername"Nope. They think I have extracurricular activites after school."
+    bestfriendname"You lying son of a bitch."
+    "As you both approach the school, there is a familiar feeling of sadness and hatred that grows stronger with every step you make."
+    "Fortunately, you were late, which means you won't have to be in the school for as long."
+    
+        
+    
+    
+    
     
     # This ends the game.
 
