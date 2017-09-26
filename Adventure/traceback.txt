@@ -1,33 +1,21 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00keymap.rpy", line 396, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 402, in <module>
-    renpy.take_screenshot((config.thumbnail_width, config.thumbnail_height))
-TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+  File "game/script.rpy", line 62, in script
+    "%(randAbility)n"
+ValueError: unsupported format character 'n' (0x6e) at index 14
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00keymap.rpy", line 396, in script
-    python hide:
-  File "D:\Ren'py\renpy\ast.py", line 814, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Ren'py\renpy\python.py", line 1719, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "renpy/common/00keymap.rpy", line 402, in <module>
-    renpy.take_screenshot((config.thumbnail_width, config.thumbnail_height))
-  File "D:\Ren'py\renpy\exports.py", line 1497, in take_screenshot
-    renpy.game.interface.take_screenshot(scale, background=background)
-  File "D:\Ren'py\renpy\display\core.py", line 1995, in take_screenshot
-    surf = renpy.display.scale.smoothscale(surf, scale)
-  File "D:\Ren'py\renpy\display\scale.py", line 92, in real_smoothscale
-    dest = pgrender.surface_unscaled(size, src)
-  File "D:\Ren'py\renpy\display\pgrender.py", line 116, in surface
-    surf = Surface((width + 4, height + 4), 0, sample)
-TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+  File "game/script.rpy", line 62, in script
+    "%(randAbility)n"
+  File "D:\Ren'py\renpy\ast.py", line 613, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "D:\Ren'py\renpy\exports.py", line 1139, in say
+    what = what % tag_quoting_dict
+ValueError: unsupported format character 'n' (0x6e) at index 14
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
- 
+Adventure 1.0

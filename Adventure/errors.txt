@@ -2,8 +2,14 @@
 errors listed below, and try again.
 
 
+<<<<<<< Updated upstream
 File "game/script.rpy", line 254: expected statement.
     "As you sprint towards your school, you run into a familiar face. %(bestfriendname)s, who you've known since you were born."/8/
                                                                                                                                    ^
+=======
+File "game/script.rpy", line 40: Line is indented, but the preceding define statement statement does not expect a block. Please check this line's indentation.
+    scene bg introbg
+    ^
+>>>>>>> Stashed changes
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

@@ -10,20 +10,30 @@ image mom = "sasha.png"
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define p = Character("playername")
+define p = Character("[playername]")
 define bf = Character("bestfriendname")
 define unknown = Character("???", color='#FFFFFF')
 define mom = Character("Mom", color='#FFFFFF')
 define dad = Character("Dad", color='#FFFFFF')
+define teacher = Character("Mr. Sharp", color='#FFFFFF')
+
+
+
+
 define movemom = MoveTransition(3.0)
 define flash = Fade(1.0, 0, 3.0, color='#FFFFFF')
+
+
 
 
 
 # The game starts here.
 
 label start:
-
+    $ randAbility = renpy.random.randint(1, 3) # TO PRINT, USE %(randAbility)d
+    
+    
+    
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -258,16 +268,32 @@ label femalechapter1toschool:
         "Just like always, she starts running along with you, to get to school as fast as possible."
         
     bestfriendname"Yo, we're hanging out at MoonBucks after school today right? I've really been wanting to try their Blueberry Sour Latte."
-    playername"Yeah, of course we are. We planned this out over the last few days remember? It was hard for me to convince my parents to let me go though."
+    p"Yeah, of course we are. We planned this out over the last few days remember? It was hard for me to convince my parents to let me go though."
     bestfriendname"They don't even know, do they?"
-    playername"Nope. They think I have extracurricular activities after school."
+    p"Nope. They think I have extracurricular activities after school."
     bestfriendname"You lying son of a bitch."
     bestfriendname"By the way, did you hear what those people on the news were saying about the nuke?"
-    playername"Yeah, my dad was just telling me about it before I left."
+    p"Yeah, my dad was just telling me about it before I left."
     bestfriendname"Seems like a bunch of bullshit, don't you think?"
-    playername"After what my dad said, yep. No way they're gonna nuke us."
+    p"After what my dad said, yep. No way they're gonna nuke us."
+    scene bg school at truecenter with fade:
+        linear 5 zoom 1.3
+    
     "As you both approach the school, there is a familiar feeling of sadness and hatred that grows stronger with every step you take."
     "Fortunately, you were late, which means you won't have to be in the school for as long."
+    bestfriendname"I really hate coming here. Hey, do you wanna ditch today, %(playername)s?"
+    p"Probably not a good idea. I wouldn't be able to hang out after school."
+    bestfriendname"Whatever man."
+    "Even as you enter the school, you continue sprinting to get to class as soon as possible."
+    if bestfriendgender == 1:
+        "%(bestfriendname)s doesn't have the same class as you though, so you'll be seeing him later during snack time."
+    if bestfriendgender == 2:
+        "%(bestfriendname)s doesn't have the same class as you though, so you'll be seeing her later during snack time."
+    "You run into class, feeling the sweat pour down your face from running so much."
+    "As you make your way into the room, you try to catch your breath."
+    teacher"You're late, [playername], how many more times until I have to send you to the office again? I'm getting sick and tired of dealing with you all the time."
+    p"I'm sorry, Mr. Sharp."
+    p"(I seriously hate this guy) [randAbility]"
     
         
     
