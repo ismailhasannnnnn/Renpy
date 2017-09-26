@@ -220,7 +220,7 @@ label femalechapter1:
         "Skip breakfast and leave for school.":
             playername"Sorry guys, I don't have any time to eat. I'm already way late for school."
             dad"That's exactly the reason why you're going to stay and eat breakfast with us. A few more minutes won't kill you. You're already late, anyway."
-            jump femalechapter1nobreakfast
+            jump femalechapter1breakfast
         
 label femalechapter1breakfast:
 
@@ -245,10 +245,10 @@ label fm1:
         "I'm seriously gonna be so late for school. Thanks for the food mom. Bye!":
             mom"Have fun at school, sweetie!"
             dad"Tell your teachers to explain more things to you! If they don't then I definitely will!"
-            jump femalechapter1nobreakfast
+            jump femalechapter1toschool
 
 
-label femalechapter1nobreakfast:
+label femalechapter1toschool:
     "As you sprint towards your school, you run into a familiar face. %(bestfriendname)s, who you've known since you were born."
     if bestfriendgender == 1:
         "Just like always, he starts running along with you, to get to school as fast as possible."
@@ -258,13 +258,13 @@ label femalechapter1nobreakfast:
     bestfriendname"Yo, we're hanging out at MoonBucks after school today right? I've really been wanting to try their Blueberry Sour Latte."
     playername"Yeah, of course we are. We planned this out over the last few days remember? It was hard for me to convince my parents to let me go though."
     bestfriendname"They don't even know, do they?"
-    playername"Nope. They think I have extracurricular activites after school."
+    playername"Nope. They think I have extracurricular activities after school."
     bestfriendname"You lying son of a bitch."
     bestfriendname"By the way, did you hear what those people on the news were saying about the nuke?"
     playername"Yeah, my dad was just telling me about it before I left."
     bestfriendname"Seems like a bunch of bullshit, don't you think?"
     playername"After what my dad said, yep. No way they're gonna nuke us."
-    "As you both approach the school, there is a familiar feeling of sadness and hatred that grows stronger with every step you make."
+    "As you both approach the school, there is a familiar feeling of sadness and hatred that grows stronger with every step you take."
     "Fortunately, you were late, which means you won't have to be in the school for as long."
     
         
