@@ -3,15 +3,17 @@ image bg introbg = "introbg.jpg"
 image bg black = "black.jpg"
 image bg malebedroom = "malebedroom.jpg"
 image bg femalebedroom = "femalebedroom.jpg"
+image mom = "sasha.png"
 
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
-define player = Character("%(playername)s")
-define bestfriend = Character("%(bestfriendname)s")
-define unknown = Character("???", color='#000000')
+define p = Character("playername")
+define bf = Character("bestfriendname")
+define unknown = Character("???", color='#FFFFFF')
+define mom = Character("Mom", color='#FFFFFF')
+define dad = Character("Dad", color='#FFFFFF')
 
 
 
@@ -162,6 +164,7 @@ label femaleintro2:
             "No":
                 jump femaleintro2
                 
+<<<<<<< HEAD
 label maleprologue:
     
     "Listen, %(playername)s, it's getting dark. We should probably get going."
@@ -176,15 +179,29 @@ label maleprologue:
     jump malechapter1
     
 label femaleprologue:
+=======
+<<<<<<< Updated upstream
+label prologue:
+=======
+label maleprologue:
+>>>>>>> Testing
     
     "Listen, %(playername)s, it's getting dark. We should probably get going."
     scene bg black
     with fade
     "From then on, nobody knew how incredibly gifted %(playername)s was."
-    if gender == 1:
-        "Little did he know, a great threat would soon overwhelm America, and his life would be changed forever."
-    if gender == 2:
-        "Little did she know, a great threat would soon overwhelm America, and her life would be changed forever."
+    "Little did he know, a great threat would soon overwhelm America, and his life would be changed forever."
+    stop music fadeout 1.0
+    jump malechapter1
+    
+label femaleprologue:
+>>>>>>> Stashed changes
+    
+    "Listen, %(playername)s, it's getting dark. We should probably get going."
+    scene bg black
+    with fade
+    "From then on, nobody knew how incredibly gifted %(playername)s was."
+    "Little did she know, a great threat would soon overwhelm America, and her life would be changed forever."
     stop music fadeout 1.0
     jump femalechapter1    
     
@@ -202,6 +219,24 @@ label femalechapter1:
     "..."
     unknown"These violent delights have violent ends, %(playername)s."
     "...!"
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+    if gender == 1:
+        scene bg malebedroom
+        with fade
+    if gender == 2:
+        scene bg femalebedroom
+        with fade
+=======
+    scene bg femalebedroom
+    with dissolve
+    playername"(What the hell was that?)"
+    show mom
+    with moveinright(3.0)
+    
+>>>>>>> Stashed changes
+>>>>>>> Testing
     
     # This ends the game.
 
