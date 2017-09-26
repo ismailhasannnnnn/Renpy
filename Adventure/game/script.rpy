@@ -260,6 +260,10 @@ label femalechapter1nobreakfast:
     bestfriendname"They don't even know, do they?"
     playername"Nope. They think I have extracurricular activites after school."
     bestfriendname"You lying son of a bitch."
+    bestfriendname"By the way, did you hear what those people on the news were saying about the nuke?"
+    playername"Yeah, my dad was just telling me about it before I left."
+    bestfriendname"Seems like a bunch of bullshit, don't you think?"
+    playername"After what my dad said, yep. No way they're gonna nuke us."
     "As you both approach the school, there is a familiar feeling of sadness and hatred that grows stronger with every step you make."
     "Fortunately, you were late, which means you won't have to be in the school for as long."
     
