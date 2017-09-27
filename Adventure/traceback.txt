@@ -1,20 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 62, in script
-    "%(randAbility)n"
-ValueError: unsupported format character 'n' (0x6e) at index 14
+After initialization, but before game start.
+  File "renpy/common/00voice.rpy", line 360, in voice_interact
+    if _menu:
+NameError: global name '_menu' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 62, in script
-    "%(randAbility)n"
-  File "D:\Ren'py\renpy\ast.py", line 613, in execute
-    renpy.exports.say(who, what, interact=self.interact)
-  File "D:\Ren'py\renpy\exports.py", line 1139, in say
-    what = what % tag_quoting_dict
-ValueError: unsupported format character 'n' (0x6e) at index 14
+  File "D:\Ren'py\renpy\bootstrap.py", line 295, in bootstrap
+    renpy.main.main()
+  File "D:\Ren'py\renpy\main.py", line 430, in main
+    renpy.game.script.report_duplicate_labels()
+  File "D:\Ren'py\renpy\script.py", line 890, in report_duplicate_labels
+    if renpy.parser.report_parse_errors():
+  File "D:\Ren'py\renpy\parser.py", line 2543, in report_parse_errors
+    renpy.display.error.report_parse_errors(full_text, error_fn)
+  File "D:\Ren'py\renpy\display\error.py", line 179, in report_parse_errors
+    error_fn=error_fn,
+  File "D:\Ren'py\renpy\game.py", line 280, in invoke_in_new_context
+    return callable(*args, **kwargs)
+  File "D:\Ren'py\renpy\display\error.py", line 43, in call_exception_screen
+    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
+  File "D:\Ren'py\renpy\ui.py", line 285, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\Ren'py\renpy\display\core.py", line 2519, in interact
+    i()
+  File "renpy/common/00voice.rpy", line 360, in voice_interact
+    if _menu:
+NameError: global name '_menu' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187

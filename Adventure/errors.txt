@@ -2,26 +2,36 @@
 errors listed below, and try again.
 
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-File "game/script.rpy", line 254: expected statement.
-    "As you sprint towards your school, you run into a familiar face. %(bestfriendname)s, who you've known since you were born."/8/
-                                                                                                                                   ^
-=======
-File "game/script.rpy", line 40: Line is indented, but the preceding define statement statement does not expect a block. Please check this line's indentation.
-    scene bg introbg
-    ^
->>>>>>> Stashed changes
-=======
-File "game/script.rpy", line 40: Line is indented, but the preceding define statement statement does not expect a block. Please check this line's indentation.
-    scene bg introbg
-    ^
->>>>>>> Stashed changes
-=======
-File "game/script.rpy", line 218: expected end of line
-    stop music with fadeout 1.0
-               ^
->>>>>>> master
+The label malechapter1 is defined twice, at
+  File "game/chapter1.rpy", line 1 and
+  File "game/script.rpy", line 211.
+
+The label femalechapter1 is defined twice, at
+  File "game/chapter1.rpy", line 39 and
+  File "game/script.rpy", line 249.
+
+The label femalechapter1breakfast is defined twice, at
+  File "game/chapter1.rpy", line 73 and
+  File "game/script.rpy", line 283.
+
+The label malechapter1breakfast is defined twice, at
+  File "game/chapter1.rpy", line 81 and
+  File "game/script.rpy", line 291.
+
+The label fm1 is defined twice, at
+  File "game/chapter1.rpy", line 88 and
+  File "game/script.rpy", line 298.
+
+The label mm1 is defined twice, at
+  File "game/chapter1.rpy", line 106 and
+  File "game/script.rpy", line 316.
+
+The label femalechapter1toschool is defined twice, at
+  File "game/chapter1.rpy", line 124 and
+  File "game/script.rpy", line 334.
+
+The label malechapter1toschool is defined twice, at
+  File "game/chapter1.rpy", line 165 and
+  File "game/script.rpy", line 375.
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
