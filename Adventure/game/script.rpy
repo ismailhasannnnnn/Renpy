@@ -11,6 +11,9 @@ image mom neutral = "momn.png"
 image dad = "Daddy.png"
 image hospital = "INTRO.png"
 image doctor = "IntroWithDoctor.png"
+image death = "IntroWithMarcus.png"
+image july21 = "july21.png"
+image aug23 = "August23.png"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -64,17 +67,22 @@ label start:
     "Did Uncle Justin go to a better place?"
     who"Yes, sweetie. That's what happened to him."
     "Well, why. . ."
+    hide blossoms with Fade(1.0, 1.0, 1.0)
+    stop music fadeout 4.0
     "Why are you crying then?"
     
     
-    hide blossoms with Fade(0.5, 1.0, 0.5)
-    stop music fadeout 3.0
     
     
-   
+    
+    play music "music/HeartRate.mp3"
+    scene july21
+    with fade
+    
+    pause
+    
 
-    "HUNTINGTON HOSPITAL"
-    "FIFTEEN YEARS LATER" 
+    
     
 
     #with Fade(0.5, 1.0, 0.5)
@@ -86,11 +94,11 @@ label start:
     
     
 
-   
     
     
     
-    play music "music/evermindful.mp3"
+    
+    
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -111,14 +119,18 @@ label start:
         
    # "Ah! Your name is %(player_name)s!"
     scene hospital
-    with dissolve
+    with fade
+   
+    #
     unknown"'Doctor. The patient's awake. Should we run the diagnostics?'"
     unknown"The one for amnesia?"
     unknown"Yes."
     unknown"Alright. Go ahead."
     unknown"*clears throat*"
+    stop music fadeout 1.0
     scene doctor
     with dissolve
+    play music "music/evermindful.mp3"
     unknown"Hello! We need to check if that brain of yours is still fully functional"
     unknown"I'm going to ask you a few questions, and you just answer what feels right."
     unknown"Ready?"
@@ -255,10 +267,29 @@ label maleprologue:
     
     "Alright, %(playername)s. I think you're good to go!"
     "Just give that knee two to three days to heal and it'll be like it never broke on you!"
-    scene bg black
+    scene doctor
+    with fade
+    stop music fadeout 1.0
+    "Hello?"
+    "[playername]? Are you still with me?"
+    scene doctor
+    with fade 
+    "Check the heartrate! The heartrate!!"
+    scene doctor
+    with Fade(0.4,0.2,0.5)
+    "Connect him to life support RIGHT NOW!"
+    scene death
+    with Fade(0.2,0.5,0.2)
+    unknown"{i}For thou art the beginning of the end.{i}"
+    scene doctor
+    with Fade(0.1,0.2,0.2)
+    "We're losing him! get the LS!"
+    
+    
+    scene black
     with fade
     
-    stop music fadeout 1.0
+    
     jump malechapter1
     
 label femaleprologue:

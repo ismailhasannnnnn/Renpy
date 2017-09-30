@@ -2,8 +2,16 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 122: expected ':' not found.
-    menu
-        ^
+File "game/chapter1.rpy", line 4: expected statement.
+    alpha 0.0
+           ^
+
+File "game/chapter1.rpy", line 5: expected statement.
+    time 3.0
+          ^
+
+File "game/chapter1.rpy", line 6: expected statement.
+    alpha 1.0
+           ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

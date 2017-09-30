@@ -1,9 +1,15 @@
 label malechapter1:
+    scene aug23
+    with Fade(0.0,0.0,2.0)
+    pause
+    scene bg black
+    with fade
     
     "..."
     "..."
     unknown"These violent delights have violent ends, %(playername)s."
     "...!"
+    play music "music/House.mp3"
     scene bg malebedroom
     with dissolve
     playername"(What the hell was that?)"
@@ -16,7 +22,7 @@ label malechapter1:
     with dissolve
     scene bg black
     with fade
-    play sound "clothes.mp3" 
+    play sound "sound/clothes.mp3" 
     "You get dressed and go downstairs."
     stop sound fadeout 1.0
     
