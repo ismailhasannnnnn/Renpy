@@ -27,6 +27,9 @@ define teacher = Character("Mr. Sharp", color='#FFFFFF')
 define f1 = Character("Josh", color='#FFFFFF')
 define f2 = Character("Ericka", color='#FFFFFF')
 define who = Character("Mom", color='#c41b13')
+define Doc = Character("Doctor", color ='#FFFFFF')
+define Nurse = Character("Assistant Nurse", color='#FFFFFF')
+
 
 
 
@@ -122,18 +125,18 @@ label start:
     with fade
    
     #
-    unknown"'Doctor. The patient's awake. Should we run the diagnostics?'"
-    unknown"The one for amnesia?"
-    unknown"Yes."
-    unknown"Alright. Go ahead."
-    unknown"*clears throat*"
+    Nurse "Doctor. The patient's awake. Shall we run the diagnostics?"
+    Doc"The one for amnesia?"
+    Nurse"Yes."
+    Doc"Alright. Give me a second."
+    Doc"*clears throat*"
     stop music fadeout 1.0
     scene doctor
     with dissolve
     play music "music/evermindful.mp3"
-    unknown"Hello! We need to check if that brain of yours is still fully functional"
-    unknown"I'm going to ask you a few questions, and you just answer what feels right."
-    unknown"Ready?"
+    Doc"Hello! We need to check if that brain of yours is still fully functional"
+    Doc"I'm going to ask you a few questions, and you just answer what feels right."
+    Doc"Ready?"
     
 label ready:
     
@@ -142,12 +145,12 @@ label ready:
             
             jump intro
         "Where am I?":
-            "Don't worry. We'll answer the questions after you're done answering yours."
+            Doc"Don't worry. We'll answer the questions after you're done answering yours."
             jump intro
             
 label intro:
-    "Alright."
-    "Are you male or female?"
+    Doc"Alright."
+    Doc"Are you male or female?"
     menu:
         "Male":
             # $ gender = 1 # 1 is male
@@ -159,22 +162,17 @@ label intro:
            
             
 label male:
-    "I see, you're male."
+    Doc"Well, obviously you are! Don't worry. We're almost done."
     $ playername = renpy.input("What's your name?")
     $ playername = playername.strip()
     if playername == "":
         $ playername = "Arthur"
        
-    "I see. Your name is %(playername)s, how fitting!"
-    "Okay, so just to be sure, your name is %(playername)s, and you're male?"
-    menu:
-        "Yes":
-            "Awesome! Let's keep going then!"
-            jump maleintro2
+    Doc"Alright, [playername]! You remember your name!"
+    Doc"Awesome! Let's keep going then!"
+    jump maleintro2
                 
-        "No":
-            jump intro
-    
+        
     
 label female:
     "I see, you're female."
@@ -195,7 +193,7 @@ label female:
    
 label maleintro2:
     
-    "Do you remember your best friend? Are they male or female?"
+    Doc"Do you remember your best friend? Are they male or female?"
     menu:
         "Male":
             $ bestfriendgender = 1 # 1 is male
@@ -204,13 +202,13 @@ label maleintro2:
             $ bestfriendgender = 2 # 2 is female   
             
     if bestfriendgender == 1:
-        "Interesting, they're male."
+        Doc"So he's male."
     if bestfriendgender == 2:
-        "Interesting, they're female."
+        "So she's female."
     $ bestfriendname = renpy.input("And their name?")
     $ bestfriendname = bestfriendname.strip()
     if bestfriendgender == 1:
-        "So they're male, and their name is %(bestfriendname)s?"
+        Doc"So they're male, and their name is %(bestfriendname)s?"
         menu:
             "Yes":
                 jump maleprologue
@@ -219,7 +217,7 @@ label maleintro2:
                 jump maleintro2
                 
     if bestfriendgender == 2:
-        "So they're female, and their name is %(bestfriendname)s?"
+        Doc"So they're female, and their name is %(bestfriendname)s?"
         menu:
             "Yes":
                 jump maleprologue
@@ -265,25 +263,25 @@ label femaleintro2:
                 
 label maleprologue:
     
-    "Alright, %(playername)s. I think you're good to go!"
-    "Just give that knee two to three days to heal and it'll be like it never broke on you!"
+    Doc"Alright, %(playername)s. I think you're good to go!"
+    Doc"Just give that knee two to three days to heal and it'll be like it never broke on you!"
     scene doctor
     with fade
     stop music fadeout 1.0
-    "Hello?"
-    "[playername]? Are you still with me?"
+    Doc"Hello?"
+    Doc"[playername]? Are you still with me?"
     scene doctor
     with fade 
-    "Check the heartrate! The heartrate!!"
+    Nurse"Check the heartrate! The heartrate!!"
     scene doctor
     with Fade(0.4,0.2,0.5)
-    "Connect him to life support RIGHT NOW!"
+    Doc"Connect him to life support RIGHT NOW!"
     scene death
     with Fade(0.2,0.5,0.2)
     unknown"{i}For thou art the beginning of the end.{i}"
     scene doctor
     with Fade(0.1,0.2,0.2)
-    "We're losing him! get the LS!"
+    Nurse"We're losing him! Plug in the life support!"
     
     
     scene black
@@ -303,12 +301,5 @@ label femaleprologue:
     stop music fadeout 1.0
     jump femalechapter1    
     
-    
-    
-    
-    
-    # This ends the game.
-
-
     pause
     return
