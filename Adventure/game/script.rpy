@@ -10,6 +10,7 @@ image bg school = "school.jpg"
 image mom neutral = "momn.png"
 image dad = "Daddy.png"
 image hospital = "INTRO.png"
+image doctor = "IntroWithDoctor.png"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -116,6 +117,8 @@ label start:
     unknown"Yes."
     unknown"Alright. Go ahead."
     unknown"*clears throat*"
+    scene doctor
+    with dissolve
     unknown"Hello! We need to check if that brain of yours is still fully functional"
     unknown"I'm going to ask you a few questions, and you just answer what feels right."
     unknown"Ready?"
