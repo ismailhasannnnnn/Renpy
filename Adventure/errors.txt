@@ -2,36 +2,8 @@
 errors listed below, and try again.
 
 
-The label malechapter1 is defined twice, at
-  File "game/chapter1.rpy", line 1 and
-  File "game/script.rpy", line 211.
-
-The label femalechapter1 is defined twice, at
-  File "game/chapter1.rpy", line 39 and
-  File "game/script.rpy", line 249.
-
-The label femalechapter1breakfast is defined twice, at
-  File "game/chapter1.rpy", line 73 and
-  File "game/script.rpy", line 283.
-
-The label malechapter1breakfast is defined twice, at
-  File "game/chapter1.rpy", line 81 and
-  File "game/script.rpy", line 291.
-
-The label fm1 is defined twice, at
-  File "game/chapter1.rpy", line 88 and
-  File "game/script.rpy", line 298.
-
-The label mm1 is defined twice, at
-  File "game/chapter1.rpy", line 106 and
-  File "game/script.rpy", line 316.
-
-The label femalechapter1toschool is defined twice, at
-  File "game/chapter1.rpy", line 124 and
-  File "game/script.rpy", line 334.
-
-The label malechapter1toschool is defined twice, at
-  File "game/chapter1.rpy", line 165 and
-  File "game/script.rpy", line 375.
+File "game/script.rpy", line 122: expected ':' not found.
+    menu
+        ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

@@ -1,45 +1,45 @@
-Tue Sep 26 21:34:35 2017
+Fri Sep 29 22:28:47 2017
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
  
 
 Bootstrap to the start of init.init took 0.06s
 Early init took 0.01s
-Loader init took 0.01s
+Loader init took 0.02s
 Loading error handling took 0.02s
-Loading script took 0.11s
+Loading script took 0.14s
 Loading persistent took 0.01s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.07s
-Loading analysis data took 0.01s
+Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\xplos\\AppData\\Roaming/RenPy/backups\\Adventure':
-Dump and make backups. took 0.04s
+Backing up script files to 'C:\\Users\\jgonz\\AppData\\Roaming/RenPy/backups\\Adventure':
+Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-DPI scale factor: 1.000000
-Creating interface object took 0.05s
+DPI scale factor: 1.500000
+Creating interface object took 0.04s
 Cleaning stores took 0.00s
-Init translation took 0.05s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.04s
-Prepare screens took 0.03s
-Save pyanalysis. took 0.04s
+Save screen analysis took 0.06s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.03s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.01s
+Interface start took 0.00s
 
-primary display bounds: (0, 0, 1920, 1080)
+primary display bounds: (0, 0, 3840, 2160)
 Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1280, 720) drawable=(1280, 720)
+Screen sizes: virtual=(1280, 720) physical=(1781, 1002) drawable=(1781, 1002)
 Vendor: 'NVIDIA Corporation'
-Renderer: 'GeForce GTX 970/PCIe/SSE2'
-Version: '4.5.0 NVIDIA 385.28'
-Display Info: <Info({'blit_sw_CC': False, 'refresh_rate': 60, 'bitsize': 32, 'wm': True, 'losses': (0, 0, 0, 8), 'hw': False, 'masks': (16711680L, 65280L, 255L, 0L), 'current_h': 1080, 'current_w': 1920, 'shifts': (16, 8, 0, 0), 'blit_sw_A': False, 'blit_hw': False, 'blit_sw': False, 'bytesize': 4, 'blit_hw_CC': False, 'blit_hw_A': False, 'video_mem': 268435456})>
+Renderer: 'GeForce GTX 1070/PCIe/SSE2'
+Version: '4.5.0 NVIDIA 382.05'
+Display Info: <Info({'blit_sw_CC': False, 'refresh_rate': 60, 'bitsize': 32, 'wm': True, 'losses': (0, 0, 0, 8), 'hw': False, 'masks': (16711680L, 65280L, 255L, 0L), 'current_h': 2160, 'current_w': 3840, 'shifts': (16, 8, 0, 0), 'blit_sw_A': False, 'blit_hw': False, 'blit_sw': False, 'bytesize': 4, 'blit_hw_CC': False, 'blit_hw_A': False, 'video_mem': 268435456})>
 Fixed-function is blacklisted.
 Extensions:
     
@@ -299,6 +299,7 @@ Extensions:
     GL_KHR_robust_buffer_access_behavior
     GL_KHR_robustness
     GL_KTX_buffer_region
+    GL_NVX_blend_equation_advanced_multi_draw_buffers
     GL_NVX_conditional_render
     GL_NVX_gpu_memory_info
     GL_NVX_multigpu_info
@@ -312,11 +313,13 @@ Extensions:
     GL_NV_blend_equation_advanced
     GL_NV_blend_equation_advanced_coherent
     GL_NV_blend_square
+    GL_NV_clip_space_w_scaling
     GL_NV_command_list
     GL_NV_compute_program5
     GL_NV_conditional_render
     GL_NV_conservative_raster
     GL_NV_conservative_raster_dilate
+    GL_NV_conservative_raster_pre_snap_triangles
     GL_NV_copy_depth_to_color
     GL_NV_copy_image
     GL_NV_depth_buffer_float
@@ -363,12 +366,14 @@ Extensions:
     GL_NV_sample_mask_override_coverage
     GL_NV_shader_atomic_counters
     GL_NV_shader_atomic_float
+    GL_NV_shader_atomic_float64
     GL_NV_shader_atomic_fp16_vector
     GL_NV_shader_atomic_int64
     GL_NV_shader_buffer_load
     GL_NV_shader_storage_buffer_object
     GL_NV_shader_thread_group
     GL_NV_shader_thread_shuffle
+    GL_NV_stereo_view_rendering
     GL_NV_texgen_reflection
     GL_NV_texture_barrier
     GL_NV_texture_compression_vtc
@@ -405,19 +410,48 @@ Using shader environment.
 Using copy RTT.
 Using gl renderer.
 Texture testing:
-- Hardware max texture size: 16384
+- Hardware max texture size: 32768
 - 64px textures work.
 - 128px textures work.
 - 256px textures work.
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
-controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
-Total time until interface ready: 1.70399999619s
+Total time until interface ready: 1.85599994659s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.080000 seconds.
-- Frame drawn at 0.086000 seconds.
-- Frame drawn at 0.087000 seconds.
-- Frame drawn at 0.100000 seconds.
-- 0.100000 seconds to render 5 frames.
+- Frame drawn at 0.040000 seconds.
+- Frame drawn at 0.042000 seconds.
+- Frame drawn at 0.054000 seconds.
+- Frame drawn at 0.071000 seconds.
+- 0.071000 seconds to render 5 frames.
+Traceback (most recent call last):
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\execution.py", line 438, in run
+    node.execute()
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\ast.py", line 613, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\exports.py", line 1147, in say
+    who(what, interact=interact)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\character.py", line 877, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\character.py", line 716, in do_display
+    **display_args)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\character.py", line 508, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\ui.py", line 285, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2526, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2825, in interact_core
+    renpy.audio.audio.interact()
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 930, in interact
+    periodic()
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 864, in periodic
+    c.periodic()
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 403, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 67, in load
+    rv = renpy.loader.load(fn)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\loader.py", line 543, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'clothes.mp3'.

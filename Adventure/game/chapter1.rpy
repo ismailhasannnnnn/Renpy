@@ -8,7 +8,7 @@ label malechapter1:
     with dissolve
     playername"(What the hell was that?)"
     "As you wake up, you hear a familiar voice shout for your name."
-    show mom at right
+    show mom neutral at right
     with dissolve
     mom"[playername]! You're gonna be late for school!"
     mom"Get dressed and eat breakfast now!"
@@ -45,11 +45,11 @@ label femalechapter1:
     scene bg femalebedroom
     with dissolve
     playername"(What the hell was that?)"
-    show mom at right
+    show mom neutral at right
     with dissolve
     mom"[playername]! You're gonna be late for school!"
     mom"Get dressed and eat breakfast now!"
-    hide mom
+    hide mom neutral
     with dissolve
     scene bg black
     with fade
@@ -80,9 +80,12 @@ label femalechapter1breakfast:
     
 label malechapter1breakfast:
     "As you sit down to eat, you hear the TV new anchor blabber about rising tensions between the Sovereignity and the U.S."
+    show dad at left 
+    with dissolve
     dad"Hey, %(playername)s, look at the crap they're feeding us on the news. They're saying that North Korea's gonna nuke us!"
     dad"No way they'd ever do it. Seriously. They know that if they did, we'd completely obliterate them."
     dad"Besides, haven't they ever heard of Mutually Assured Destruction?"
+    hide dad 
     jump mm1
     
 label fm1:
@@ -112,13 +115,19 @@ label mm1:
             jump mm1
             
         "What's Mutually Assured Destruction?":
+            show mom neutral at right
+            with dissolve
             mom"Wow, they really aren't teaching anything in that school of yours! Should I have a parent-teacher conference?"
             dad"Let's just say that North Korea won't get a second chance to nuke us. You know, cause they're gonna be dead."
+            hide mom neutral 
             jump mm1
             
         "I'm seriously gonna be so late for school. Thanks for the food mom. Bye!":
-            mom"Have fun at school, sweetie!"
-            dad"Tell your teachers to explain more things to you! If they don't then I definitely will!"
+            show mom neutral at right
+            with dissolve
+            mom" Alright. Have fun at school, sweetie!"
+            dad"Tell your teachers to explain more things to you! If they don't, then I definitely will!"
+            hide mom neutral
             jump malechapter1toschool
 
 label femalechapter1toschool:

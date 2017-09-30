@@ -1,3 +1,4 @@
+
 # The script of the game goes in this file.
 image bg introbg = "introbg.jpg"
 image bg black = "black.jpg"
@@ -6,8 +7,9 @@ image bg femalebedroom = "femalebedroom.jpg"
 image bg kitchen = "kitchen.jpg"
 image bg road = "road.jpg"
 image bg school = "school.jpg"
-image mom = "sasha.png"
-
+image mom neutral = "momn.png"
+image dad = "Daddy.png"
+image hospital = "INTRO.png"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -20,7 +22,7 @@ define dad = Character("Dad", color='#FFFFFF')
 define teacher = Character("Mr. Sharp", color='#FFFFFF')
 define f1 = Character("Josh", color='#FFFFFF')
 define f2 = Character("Ericka", color='#FFFFFF')
-
+define who = Character("Mom", color='#c41b13')
 
 
 
@@ -28,6 +30,10 @@ define movemom = MoveTransition(3.0)
 define flash = Fade(1.0, 0, 3.0, color='#FFFFFF')
 
 
+
+init:
+    image blossoms = SnowBlossom(Animation("snow.png",count=100,xspeed=100,yspeed=1000))
+                                           
 
 
 
@@ -42,12 +48,48 @@ label start:
     
     
     
+    scene bg black
+    show blossoms
+    
+    play music "music/River.mp3" 
+       
+    " THIS IS A PLACEHOLDER INTRO: A past conversation between you and mom. Perhaps make the conversation pertain better to radiation "
+    "Mom?"
+    who"Yes sweetie?"
+    "Where do people go when they die?"
+    who"Honey, why do you want to know that?"
+    "Cause I'm scared."
+    who"All you need to know is that they go to a better place."
+    "Did Uncle Justin go to a better place?"
+    who"Yes, sweetie. That's what happened to him."
+    "Well, why. . ."
+    "Why are you crying then?"
+    
+    
+    hide blossoms with Fade(0.5, 1.0, 0.5)
+    stop music fadeout 3.0
+    
+    
+   
+
+    "HUNTINGTON HOSPITAL"
+    "FIFTEEN YEARS LATER" 
+    
+
+    #with Fade(0.5, 1.0, 0.5)
+    
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
+    
+    
+    
 
-    scene bg introbg
-    play music "evermindful.mp3"
+   
+    
+    
+    
+    play music "music/evermindful.mp3"
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -67,10 +109,29 @@ label start:
    #     $ player_name = "Loser"
         
    # "Ah! Your name is %(player_name)s!"
-   
-    "Hi. This is your adventure."
-    "Let's start with a simple question!"
+    scene hospital
+    with dissolve
+    unknown"'Doctor. The patient's awake. Should we run the diagnostics?'"
+    unknown"The one for amnesia?"
+    unknown"Yes."
+    unknown"Alright. Go ahead."
+    unknown"*clears throat*"
+    unknown"Hello! We need to check if that brain of yours is still fully functional"
+    unknown"I'm going to ask you a few questions, and you just answer what feels right."
+    unknown"Ready?"
+    
+label ready:
+    
+    menu:
+        "I'm Ready":
+            
+            jump intro
+        "Where am I?":
+            "Don't worry. We'll answer the questions after you're done answering yours."
+            jump intro
+            
 label intro:
+    "Alright."
     "Are you male or female?"
     menu:
         "Male":
@@ -119,7 +180,7 @@ label female:
    
 label maleintro2:
     
-    "What about your best friend? Are they male or female?"
+    "Do you remember your best friend? Are they male or female?"
     menu:
         "Male":
             $ bestfriendgender = 1 # 1 is male
@@ -153,7 +214,7 @@ label maleintro2:
                 
 label femaleintro2:
     
-    "What about your best friend? Are they male or female?"
+    "Do you remember your best friend? Are they male or female?"
     menu:
         "Male":
             $ bestfriendgender = 1 # 1 is male
@@ -189,21 +250,22 @@ label femaleintro2:
                 
 label maleprologue:
     
-    "Listen, %(playername)s, it's getting dark. We should probably get going."
+    "Alright, %(playername)s. I think you're good to go!"
+    "Just give that knee two to three days to heal and it'll be like it never broke on you!"
     scene bg black
     with fade
-    "From then on, nobody knew how incredibly gifted %(playername)s was."
-    "Little did he know, a great threat would soon overwhelm America, and his life would be changed forever."
+    
     stop music fadeout 1.0
     jump malechapter1
     
 label femaleprologue:
     
-    "Listen, %(playername)s, it's getting dark. We should probably get going."
+    "Alright, %(playername)s. I think you're good to go!"
+    "Just give that knee two to three days to heal and it'll be like it never broke on you!"
+    
     scene bg black
     with fade
-    "From then on, nobody knew how incredibly gifted %(playername)s was."
-    "Little did she know, a great threat would soon overwhelm America, and her life would be changed forever."
+    
     stop music fadeout 1.0
     jump femalechapter1    
     
