@@ -2,13 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 31: invalid syntax
-    Character("Assistant Nurse" color='#FFFFFF')
-                                     ^
-
-File "game/script.rpy", line 208: invalid syntax
-    bestfriendname = renpy.input(Doc"And their name?")
-                                                     ^
-    
+File "game/script.rpy", line 51: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        show text "
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

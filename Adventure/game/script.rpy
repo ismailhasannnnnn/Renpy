@@ -41,7 +41,17 @@ define flash = Fade(1.0, 0, 3.0, color='#FFFFFF')
 init:
     image blossoms = SnowBlossom(Animation("snow.png",count=100,xspeed=100,yspeed=1000))
                                            
+label splashscreen:
+    scene black
+    with Pause(1)
 
+    show text "Jismaigul Productions" with dissolve
+    with Pause(2)
+    
+    hide text with dissolve
+    with Pause(1)
+
+    return
 
 
 # The game starts here.
@@ -79,10 +89,27 @@ label start:
     
     
     play music "music/HeartRate.mp3"
-    scene july21
-    with fade
+  #  scene july21
+   # with fade
     
-    pause
+   # pause
+    scene black
+    with Pause(1)
+
+    show text "Jismailgul Presents" with dissolve
+    with Pause(2)
+    
+    hide text with dissolve
+    with Pause(1)
+    
+    show text "Fallout 5" with dissolve
+    with Pause (2)
+    
+
+    hide text with dissolve
+    with Pause(1)
+
+    
     
 
     
@@ -121,10 +148,12 @@ label start:
    #     $ player_name = "Loser"
         
    # "Ah! Your name is %(player_name)s!"
+    play music "music/Hum.mp3" fadein 2.0
     scene hospital
     with fade
    
     #
+    
     Nurse "Doctor. The patient's awake. Shall we run the diagnostics?"
     Doc"The one for amnesia?"
     Nurse"Yes."
