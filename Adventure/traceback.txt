@@ -1,20 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 128, in script
-    Nurse "Doctor. The patient's awake. Shall we run the diagnostics?"
-Exception: Sayer 'Nurse' is not defined.
+  File "game/script.rpy", line 106, in script
+    
+  File "game/script.rpy", line 106, in <module>
+    
+NameError: name 'pause' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 128, in script
-    Nurse "Doctor. The patient's awake. Shall we run the diagnostics?"
-  File "C:\Users\NewUsername\Desktop\renpy-6.99.12.4-sdk\renpy\ast.py", line 593, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\NewUsername\Desktop\renpy-6.99.12.4-sdk\renpy\ast.py", line 509, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
-Exception: Sayer 'Nurse' is not defined.
+  File "game/script.rpy", line 106, in script
+    
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\ast.py", line 1268, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\python.py", line 1749, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\jgonz\Desktop\renpy-6.99.12.4-sdk\renpy\python.py", line 1743, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 106, in <module>
+    
+NameError: name 'pause' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187

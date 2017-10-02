@@ -14,6 +14,7 @@ image doctor = "IntroWithDoctor.png"
 image death = "IntroWithMarcus.png"
 image july21 = "july21.png"
 image aug23 = "August23.png"
+image j = "j.png"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -43,13 +44,16 @@ init:
                                            
 label splashscreen:
     scene black
-    with Pause(1)
+    with Pause(.5)
 
-    show text "Jismaigul Productions" with dissolve
+    scene j
+    with dissolve
     with Pause(2)
     
-    hide text with dissolve
-    with Pause(1)
+    scene black
+    with dissolve
+    with Pause(.5)
+    
 
     return
 
@@ -70,44 +74,44 @@ label start:
     
     play music "music/River.mp3" 
        
-    " THIS IS A PLACEHOLDER INTRO: A past conversation between you and mom. Perhaps make the conversation pertain better to radiation "
-    "Mom?"
-    who"Yes sweetie?"
-    "Where do people go when they die?"
-    who"Honey, why do you want to know that?"
-    "Cause I'm scared."
-    who"All you need to know is that they go to a better place."
-    "Did Uncle Justin go to a better place?"
-    who"Yes, sweetie. That's what happened to him."
-    "Well, why. . ."
-    hide blossoms with Fade(1.0, 1.0, 1.0)
-    stop music fadeout 4.0
-    "Why are you crying then?"
-    
-    
-    
-    
-    
-    play music "music/HeartRate.mp3"
-  #  scene july21
-   # with fade
-    
-   # pause
+    show text " THIS IS A PLACEHOLDER INTRO: A past conversation between you and mom. Perhaps make the conversation pertain better to radiation "
+    pause
+    show text "Mom?"
+    pause
+    show text "Yes sweetie?"
+    pause
+    show text "Where do people go when they die?"
+    pause
+    show text"Honey, why do you want to know that?"
+    pause
+    show text "Cause I'm scared."
+    pause
+    show text"All you need to know is that they go to a better place."
+    pause
+    show text"Did Uncle Justin go to a better place?"
+    pause
+    show text"Yes, sweetie. That's what happened to him."
+    pause
+    show text"Well, why are you crying then?"
+    pause
     scene black
-    with Pause(1)
-
-    show text "Jismailgul Presents" with dissolve
-    with Pause(2)
+    with dissolve
     
-    hide text with dissolve
-    with Pause(1)
     
-    show text "Fallout 5" with dissolve
-    with Pause (2)
+    hide blossoms with Fade(1.0, 1.0, 1.0)
+    stop music fadeout 2.0
     
-
-    hide text with dissolve
-    with Pause(1)
+    play sound "music/HeartRate.mp3" loop
+    show text"Fifteen Years Later"
+    pause
+    
+    
+    
+    
+    
+    
+    
+ 
 
     
     
@@ -154,27 +158,36 @@ label start:
    
     #
     
-    Nurse "Doctor. The patient's awake. Shall we run the diagnostics?"
+    Nurse "Doctor, The patient's awake. Shall we run the diagnostics?"
     Doc"The one for amnesia?"
     Nurse"Yes."
     Doc"Alright. Give me a second."
+    Nurse"Doc, can we please unplug that heartrate sensor? It's driving me crazy."
+    Doc"Gotcha."
+    stop sound fadeout 3.0
     Doc"*clears throat*"
-    stop music fadeout 1.0
+   # stop music fadeout 2.0
+    
     scene doctor
     with dissolve
-    play music "music/evermindful.mp3"
-    Doc"Hello! We need to check if that brain of yours is still fully functional"
+   # play music "music/evermindful.mp3"
+    Doc"Good morning! or should I say, evening!"
+    Doc"You've been out for three days! That anesthesia really took a toll on you!"
+    Nurse"You gave him an overdose, Doc."
+    Doc"Okay. Maybe I did. Maybe I didn't. Anyway. Let's cut to the chase."
     Doc"I'm going to ask you a few questions, and you just answer what feels right."
+    Doc"They might sound stupid, but the faster you answer, the faster you'll get outta here."
     Doc"Ready?"
     
 label ready:
     
     menu:
-        "I'm Ready":
+        "'I'm Ready'":
             
             jump intro
-        "Where am I?":
-            Doc"Don't worry. We'll answer the questions after you're done answering yours."
+        "'Where am I?'":
+            Nurse"See Doc? Why didn't we just call in Betty for the anesthesia?"
+            Doc"Haha. Just ignore her. We'll answer the questions after you're done answering yours."
             jump intro
             
 label intro:
@@ -297,20 +310,26 @@ label maleprologue:
     scene doctor
     with fade
     stop music fadeout 1.0
+    with Pause(1)
     Doc"Hello?"
     Doc"[playername]? Are you still with me?"
     scene doctor
     with fade 
-    Nurse"Check the heartrate! The heartrate!!"
+    Doc"Hey, check the vitals!"
     scene doctor
     with Fade(0.4,0.2,0.5)
-    Doc"Connect him to life support RIGHT NOW!"
+    Nurse"Heartrate, breathing, blood pressure . Sir, they're all unstable."
+    Doc"S**t, get the life support!"
+    scene black
+    with dissolve
+    
     scene death
     with Fade(0.2,0.5,0.2)
-    unknown"{i}For thou art the beginning of the end.{i}"
+    unknown"{i}These violents delights have violent ends.{i}"
     scene doctor
-    with Fade(0.1,0.2,0.2)
-    Nurse"We're losing him! Plug in the life support!"
+    with Fade(0.5,0.5,0.5)
+    pause(1)
+    Nurse"I'm plugging him in. "
     
     
     scene black
