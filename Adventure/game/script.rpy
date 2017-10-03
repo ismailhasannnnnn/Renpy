@@ -36,12 +36,13 @@ define Nurse = Character("Assistant Nurse", color='#FFFFFF')
 
 define movemom = MoveTransition(3.0)
 define flash = Fade(1.0, 0, 3.0, color='#FFFFFF')
+define slowfade = Fade(5.0, 0, 1)
 
 
 
 init:
     image blossoms = SnowBlossom(Animation("snow.png",count=100,xspeed=100,yspeed=1000))
-                                           
+
 label splashscreen:
     scene black
     with Pause(.5)
@@ -49,11 +50,11 @@ label splashscreen:
     scene j
     with dissolve
     with Pause(2)
-    
+
     scene black
     with dissolve
     with Pause(.5)
-    
+
 
     return
 
@@ -66,73 +67,73 @@ label start:
     # 1 - Immune to Radiation
     # 2 - PLACEHOLDER
     # 3 - PLACEHOLDER
-    
-    
-    
+
+
+
     scene bg black
     show blossoms
-    
-    play music "music/River.mp3" 
-       
-    show text " THIS IS A PLACEHOLDER INTRO: A past conversation between you and mom. Perhaps make the conversation pertain better to radiation "
+
+    play music "music/River.mp3"
+
+    show text "Winter, Years Ago"
     pause
     show text "Mom?"
     pause
-    show text "Yes sweetie?"
+    show text "{color=#00BFFF}Yes sweetie?{/color}"
     pause
     show text "Where do people go when they die?"
     pause
-    show text"Honey, why do you want to know that?"
+    show text"{color=#00BFFF}Honey, why do you want to know that?{/color}"
     pause
     show text "Cause I'm scared."
     pause
-    show text"All you need to know is that they go to a better place."
+    show text"{color=#00BFFF}All you need to know is that they go to a better place.{/color}"
     pause
     show text"Did Uncle Justin go to a better place?"
     pause
-    show text"Yes, sweetie. That's what happened to him."
+    show text"{color=#00BFFF}Yes, sweetie. That's what happened to him.{/color}"
     pause
     show text"Well, why are you crying then?"
     pause
     scene black
     with dissolve
-    
-    
+
+
     hide blossoms with Fade(1.0, 1.0, 1.0)
     stop music fadeout 2.0
-    
+
     play sound "music/HeartRate.mp3" loop
     show text"Fifteen Years Later"
     pause
-    
-    
-    
-    
-    
-    
-    
- 
 
-    
-    
 
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 
     #with Fade(0.5, 1.0, 0.5)
-    
+
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
-    
-    
-    
 
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -150,24 +151,24 @@ label start:
    # $ player_name = player_name.strip()
    # if player_name == "":
    #     $ player_name = "Loser"
-        
+
    # "Ah! Your name is %(player_name)s!"
     play music "music/Hum.mp3" fadein 2.0
     scene hospital
     with fade
-   
+
     #
-    
+
     Nurse "Doctor, The patient's awake. Shall we run the diagnostics?"
     Doc"The one for amnesia?"
     Nurse"Yes."
     Doc"Alright. Give me a second."
     Nurse"Doc, can we please unplug that heartrate sensor? It's driving me crazy."
     Doc"Gotcha."
-    stop sound fadeout 3.0
+    stop sound
     Doc"*clears throat*"
    # stop music fadeout 2.0
-    
+
     scene doctor
     with dissolve
    # play music "music/evermindful.mp3"
@@ -178,18 +179,18 @@ label start:
     Doc"I'm going to ask you a few questions, and you just answer what feels right."
     Doc"They might sound stupid, but the faster you answer, the faster you'll get outta here."
     Doc"Ready?"
-    
+
 label ready:
-    
+
     menu:
         "'I'm Ready'":
-            
+
             jump intro
         "'Where am I?'":
             Nurse"See Doc? Why didn't we just call in Betty for the anesthesia?"
             Doc"Haha. Just ignore her. We'll answer the questions after you're done answering yours."
             jump intro
-            
+
 label intro:
     Doc"Alright."
     Doc"Are you male or female?"
@@ -197,157 +198,124 @@ label intro:
         "Male":
             # $ gender = 1 # 1 is male
             jump male
-           
+
         "Female":
             # $ gender = 2 # 2 is female
             jump female
-           
-            
+
+
 label male:
-    Doc"Well, obviously you are! Don't worry. We're almost done."
+    Doc"Awesome! You passed the first question! Don't worry. We're almost done."
     $ playername = renpy.input("What's your name?")
     $ playername = playername.strip()
     if playername == "":
         $ playername = "Arthur"
-       
+
     Doc"Alright, [playername]! You remember your name!"
-    Doc"Awesome! Let's keep going then!"
+    Doc"Great! Let's keep going then!"
     jump maleintro2
-                
-        
-    
+
+
+
 label female:
-    "I see, you're female."
+    "Awesome! You passed the first question! Don't worry. We're almost done."
     $ playername = renpy.input("What's your name?")
     $ playername = playername.strip()
     if playername == "":
-        $ playername = "Arthur"
-       
-    "I see. Your name is %(playername)s, how fitting!"
-    "Okay, so just to be sure, your name is %(playername)s, and you're female?"
-    menu:
-        "Yes":
-            "Awesome! Let's keep going then!"
-            jump femaleintro2
-                
-        "No":
-            jump intro
-   
+        $ playername = "Karolina"
+
+    Doc"Perfect, [playername], you remember your name!"
+    Doc "Great! Let's keep going then!"
+    jump femaleintro2
+
 label maleintro2:
-    
+
     Doc"Do you remember your best friend? Are they male or female?"
     menu:
         "Male":
             $ bestfriendgender = 1 # 1 is male
-            
+
         "Female":
-            $ bestfriendgender = 2 # 2 is female   
-            
+            $ bestfriendgender = 2 # 2 is female
+
     if bestfriendgender == 1:
-        Doc"So he's male."
+        Doc"He'll be happy to hear you didn't forget he was a guy."
     if bestfriendgender == 2:
-        "So she's female."
+        Doc"She'll be ecstatic to hear you didn't forget she was a girl."
     $ bestfriendname = renpy.input("And their name?")
     $ bestfriendname = bestfriendname.strip()
+    if bestfriendname == "":
+        if bestfriendgender == 1:
+            $ bestfriendname ="male"
+        if bestfriendgender == 2:
+            $ bestfriendname = "female"
     if bestfriendgender == 1:
-        Doc"So they're male, and their name is %(bestfriendname)s?"
-        menu:
-            "Yes":
-                jump maleprologue
-                
-            "No":
-                jump maleintro2
-                
+        Doc "Perfect! You remember his name as well!"
+        jump maleprologue
+
     if bestfriendgender == 2:
-        Doc"So they're female, and their name is %(bestfriendname)s?"
-        menu:
-            "Yes":
-                jump maleprologue
-                
-            "No":
-                jump maleintro2
-                
+        Doc "Perfect! You remember her name as well!"
+        jump maleprologue
+
 label femaleintro2:
-    
+
     "Do you remember your best friend? Are they male or female?"
     menu:
         "Male":
             $ bestfriendgender = 1 # 1 is male
-            
+
         "Female":
-            $ bestfriendgender = 2 # 2 is female   
-            
+            $ bestfriendgender = 2 # 2 is female
+
     if bestfriendgender == 1:
-        "Interesting, they're male."
+        Doc"He'll be happy to hear you didn't forget he was a guy."
     if bestfriendgender == 2:
-        "Interesting, they're female."
+        Doc"She'll be ecstatic to hear you didn't forget she was a girl."
     $ bestfriendname = renpy.input("And their name?")
     $ bestfriendname = bestfriendname.strip()
     if bestfriendname == "":
         $ bestfriendname = "Justin"
     if bestfriendgender == 1:
-        "So they're male, and their name is %(bestfriendname)s?"
-        menu:
-            "Yes":
-                jump femaleprologue
-                
-            "No":
-                jump femaleintro2
-                
+        Doc "Perfect! You remember his name as well!"
+        jump femaleprologue
+
     if bestfriendgender == 2:
-        "So they're female, and their name is %(bestfriendname)s?"
-        menu:
-            "Yes":
-                jump femaleprologue
-                
-            "No":
-                jump femaleintro2
-                
+        Doc "Perfect! You remember her name as well!"
+        jump femaleprologue
+
 label maleprologue:
-    
+
     Doc"Alright, %(playername)s. I think you're good to go!"
     Doc"Just give that knee two to three days to heal and it'll be like it never broke on you!"
-    scene doctor
+    stop music
     with fade
-    stop music fadeout 1.0
-    with Pause(1)
-    Doc"Hello?"
-    Doc"[playername]? Are you still with me?"
-    scene doctor
-    with fade 
-    Doc"Hey, check the vitals!"
-    scene doctor
-    with Fade(0.4,0.2,0.5)
-    Nurse"Heartrate, breathing, blood pressure . Sir, they're all unstable."
-    Doc"S**t, get the life support!"
     scene black
-    with dissolve
-    
-    scene death
-    with Fade(0.2,0.5,0.2)
-    unknown"{i}These violents delights have violent ends.{i}"
-    scene doctor
-    with Fade(0.5,0.5,0.5)
-    pause(1)
-    Nurse"I'm plugging him in. "
-    
-    
-    scene black
-    with fade
-    
-    
+    with slowfade
+    Doc"I didn't think he'd survive."
+    Nurse "Why didn't you tell him the truth about the surgery?"
+    Doc"To keep him alive."
+    with Pause(3.0)
     jump malechapter1
-    
+
 label femaleprologue:
-    
+
     "Alright, %(playername)s. I think you're good to go!"
     "Just give that knee two to three days to heal and it'll be like it never broke on you!"
-    
+    stop music
+    with fade
+    scene black
+    with slowfade
+    Doc"I didn't think she'd survive."
+    Nurse "Why didn't you tell her the truth about the surgery?"
+    Doc"To keep her alive."
+    with Pause(3.0)
+    jump femalechapter1
+
     scene bg black
     with fade
-    
+
     stop music fadeout 1.0
-    jump femalechapter1    
-    
+    jump femalechapter1
+
     pause
     return
