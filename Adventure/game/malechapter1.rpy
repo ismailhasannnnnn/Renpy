@@ -96,7 +96,7 @@ label malechapter1toschool:
     bestfriendname"Seems like a bunch of bullshit, don't you think?"
     playername"After what my dad said, yep. No way they're gonna nuke us."
     scene bg school at truecenter with fade:
-       # linear 5 zoom 1.3 
+       # linear 5 zoom 1.3
        ease 0.5 zoom 1.3
 
     "As you both approach the school, there is a familiar feeling of sadness and hatred that grows stronger with every step you take."
